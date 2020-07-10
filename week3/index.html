@@ -7,40 +7,37 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
+    <link rel="stylesheet" href="./product.css">
+    </head>
 
 <body>
-    <div id="app" class="container mt-3">
-        <div>
-            <div class="text-right mt-4">
-                <button class="btn btn-primary" @click="openModal('new')">
+    <div id="app" class="container py-5">
+            <div class="text-right">
+                <button class="btn btn-info" @click="openModal('new')">
                     建立新的產品
                 </button>
             </div>
             <table class="table mt-4">
-                <thead>
+                <thead class="thead-dark text-center">
                     <tr>
                         <th width="120">分類</th>
                         <th width="120">產品名稱</th>
                         <th width="120">原價</th>
                         <th width="120">售價</th>
                         <th width="100">是否啟用</th>
-                        <th width="120">修改/刪除</th>
+                        <th width="120">編輯</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="text-center">
                     <tr v-for="(item) in products" :key="item.id">
                         <td>{{ item.category }}</td>
                         <td>{{ item.title }}</td>
                         <td>{{ item.origin_price }}</td>
                         <td>{{ item.price }}</td>
-                        <td>
-                            <span v-if="item.is_enabled" class="text-success">啟用</span>
-                            <span v-else>未啟用</span>
-                        </td>
+                        <td><input type="checkbox" v-model="item.is_enabled"></td>
                         <td>
                             <div class="btn-group">
-                                <button class="btn btn-outline-primary btn-sm" @click="openModal('edit', item)">
+                                <button class="btn btn-outline-info btn-sm mr-3" @click="openModal('edit', item)">
                                     編輯
                                 </button>
                                 <button class="btn btn-outline-danger btn-sm" @click="openModal('delete', item)">
@@ -170,7 +167,6 @@
                 </div>
             </div>
         </div>
-    </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
         </script>

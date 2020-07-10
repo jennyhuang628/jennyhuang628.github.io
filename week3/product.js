@@ -26,18 +26,6 @@ new Vue({
                 is_enabled: 0,
                 imageUrl: 'https://images.unsplash.com/photo-1492683654773-a3b0476056c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1475&q=80',
             },
-            {
-                id: 147899,
-                unit: '片',
-                category: '蛋糕',
-                title: '蛋糕',
-                origin_price: 180,
-                price: 150,
-                description: '抹茶香氣醇厚，甜中透露些許苦澀，卻又餘韻回甘。',
-                content: '抹茶粉、鮮奶油',
-                is_enabled: 0,
-                imageUrl: 'https://images.unsplash.com/photo-1492683654773-a3b0476056c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1475&q=80',
-            },
         ],
         tempProduct: {},//暫存物件，不修改原始資料
     },
