@@ -31,18 +31,19 @@ new Vue({
     },
     methods: {
         openModal(action, item) {
+            //Modal狀態，新增和編輯開啟productModal，刪除開啟delProductModal
             switch (action) {
                 case 'new':
                     this.tempProduct = {};
                     $('#productModal').modal('show');
                     break;
                 case 'edit':
-                    this.tempProduct = Object.assign({}, item);
+                    this.tempProduct = Object.assign({}, item);//淺拷貝
                     $('#productModal').modal('show');
                     break;
                 case 'delete':
                     $('#delProductModal').modal('show');
-                    this.tempProduct = Object.assign({}, item);
+                    this.tempProduct = Object.assign({}, item);//淺拷貝
                     break;
                 default:
                     break;
@@ -58,7 +59,7 @@ new Vue({
                     }
                 });
             } else {
-                this.tempProduct.id = new Date().getTime();
+                this.tempProduct.id = new Date().getTime();//建新ID
                 this.products.push(this.tempProduct)
             }
             this.tempProduct = {};
