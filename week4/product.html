@@ -201,8 +201,8 @@
       </div>
     </script>
 
-    <!-- 分頁元件建立 -->
-    <script type="text/x-template" id="pagination">
+
+    <!-- <script type="text/x-template" id="pagination">
       <nav aria-label="Page navigation example">
         <ul class="pagination">
           <li
@@ -246,7 +246,8 @@
           </li>
         </ul>
       </nav>
-    </script>
+    </script> -->
+    
 
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -262,6 +263,10 @@
         </script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+     <!-- 主要 JS -->
+     <script src="./js/all.js"></script>
+         <!-- 分頁元件建立 -->
+    <script src="./js/pagination.js"></script>
 
     <script>
         Vue.component('delProductModal', {
@@ -391,27 +396,27 @@
             },
         });
 
-        Vue.component('pagination', {
-            template: '#pagination',
-            data() {
-                return {
-                };
-            },
-            props: {
-                pages: {
-                    type: Object,
-                    default() {
-                        return {
-                        };
-                    },
-                },
-            },
-            methods: {
-                emitPages(item) {
-                    this.$emit('emit-pages', item);
-                },
-            },
-        });
+        // Vue.component('pagination', {
+        //     template: '#pagination',
+        //     data() {
+        //         return {
+        //         };
+        //     },
+        //     props: {
+        //         pages: {
+        //             type: Object,
+        //             default() {
+        //                 return {
+        //                 };
+        //             },
+        //         },
+        //     },
+        //     methods: {
+        //         emitPages(item) {
+        //             this.$emit('emit-pages', item);
+        //         },
+        //     },
+        // });
 
         new Vue({
             el: '#app',
